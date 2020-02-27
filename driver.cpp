@@ -32,21 +32,39 @@ int main()
     
     int hi = left->pop();
     left->push(0);
-    middle->pop();
-    middle->push(hi);
-    std::cout << "\n";
-    tower->displayTowers();
-
-    hi = left->pop();
-    hi = left->pop();
-    left->push(0);
-    left->push(0);
-
     right->pop();
     right->push(hi);
 
+
     std::cout << "\n";
     tower->displayTowers();
+    
+    left->pop();
+    hi = left->pop();
+    left->push(0);
+    left->push(0);
+
+    middle->pop();
+    middle->push(hi);
+
+    std::cout << "\n";
+    tower->displayTowers();
+
+    hi = right->pop();
+    right->push(0);
+
+    int bye = middle->pop();
+    middle->pop();
+    middle->push(hi);
+    middle->push(bye);
+
+    std::cout << "\n";
+    tower->displayTowers();
+
+
+
+
+    
     
 
     return 0;
