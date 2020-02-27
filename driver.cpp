@@ -61,11 +61,5 @@ int main()
     std::cout << "\n";
     tower->displayTowers();
 
-
-
-
-    
-    
-
     return 0;
 }
