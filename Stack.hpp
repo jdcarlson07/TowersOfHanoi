@@ -1,4 +1,6 @@
 #include "Node.hpp"
+#include <string>
+using namespace std;
 
 class Stack
 {
@@ -11,4 +13,6 @@ class Stack
         int pop();
         int peek();
         void display();
+        string displayAtIndex(int index);
+        
 };

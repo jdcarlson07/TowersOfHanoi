@@ -1,5 +1,7 @@
 #include "Stack.hpp"
 #include <iostream>
+#include <string>
+using namespace std;
 
 Stack::Stack()
 {
@@ -53,3 +55,20 @@ void Stack::display()
         std::cout << "Empty Stack\n";
     }
 }
+
+string Stack::displayAtIndex(int index)
+{
+    Node* currNode = this->top;
+    int indx = index;
+    string a = "";
+    
+    for(int i = 0; i <= indx; i++)
+    {
+        a = currNode->makeStringDisk();
+        currNode = currNode->getNextNode();
+    }
+    return a;
+}
+
+
+

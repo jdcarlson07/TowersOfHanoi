@@ -1,3 +1,6 @@
+#include <string>
+using namespace std;
+
 class Node
 {
     private:
@@ -9,4 +12,6 @@ class Node
         int getPayload();
         void setNextNode(Node* n);
         Node* getNextNode();
+        string makeStringDisk();
+        string spaceMaker();
 };
