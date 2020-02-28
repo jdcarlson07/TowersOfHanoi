@@ -9,8 +9,8 @@ class Stack
 
     public:
         Stack();
-        void push(int payload);
-        int pop();
+        void push(Node* newNode);
+        Node* pop();
         int peek();
         void display();
         string displayAtIndex(int index);

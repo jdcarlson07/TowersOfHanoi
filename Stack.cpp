@@ -8,9 +8,9 @@ Stack::Stack()
     this->top = 0;
 }
 
-void Stack::push(int payload)
+void Stack::push(Node* newNode)
 {
-    Node* n = new Node(payload);
+    Node* n = newNode;
     if(top)
     {
         //we have at least one element on our stack
@@ -24,14 +24,11 @@ void Stack::push(int payload)
     
 }
 
-int Stack::pop()
+Node* Stack::pop()
 {
-    int valueToReturn = this->top->getPayload();
-    Node* temp = this->top;
+    Node* nodeToReturn = this->top;
     top = top->getNextNode();
-    temp->setNextNode(0);
-    delete temp;
-    return valueToReturn;
+    return nodeToReturn;
 }
 
 int Stack::peek()

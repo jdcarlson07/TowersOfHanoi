@@ -28,7 +28,7 @@ string Node::makeStringDisk()
     string space = this->spaceMaker();
     string disc = "";
     int payload = this->getPayload();
-    if(payload != 0)
+    if(payload > 0 and payload < 5)
     {    
         for(int i = 0; i < payload; i++)
         {
@@ -40,7 +40,7 @@ string Node::makeStringDisk()
 
     else
     {
-        disc = disc + space;
+        disc = space;
         return disc;
     }
 }
@@ -49,6 +49,12 @@ string Node::spaceMaker()
 {
     string space = "";
     int a = this->getPayload();
+    if(a == 5)
+    {
+        space = "     ";
+        return space;
+    }
+
     int b = -a + 5;
     for(int i = 1; i <= b; i++)
     {
