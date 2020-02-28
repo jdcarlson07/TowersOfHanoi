@@ -55,16 +55,13 @@ void Stack::display()
 
 string Stack::displayAtIndex(int index)
 {
-    Node* currNode = this->top;
     int indx = index;
-    string a = "";
-    
-    for(int i = 0; i <= indx; i++)
+    int count = -1;
+    Node* currNode = this->top;
+    while(currNode)
     {
-        a = currNode->makeStringDisk();
-        currNode = currNode->getNextNode();
-    }
-    return a;
+        
+    }   
 }
 
 

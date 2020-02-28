@@ -15,4 +15,5 @@ class Stack
         void display();
         string displayAtIndex(int index);
         
+        
 };

@@ -11,10 +11,10 @@ int main()
     Node* twoDisc = new Node(2);
     Node* threeDisc = new Node(3);
 
-    Node* zero1 = new Node(0);
+    Node* zero1 = new Node(5);
     Node* zero2 = new Node(5);
     Node* zero3 = new Node(5);
-    Node* zero4 = new Node(0);
+    Node* zero4 = new Node(5);
     Node* zero5 = new Node(5);
     Node* zero6 = new Node(5);
     
