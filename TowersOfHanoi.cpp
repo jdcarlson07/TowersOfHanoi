@@ -73,6 +73,7 @@ int TowersOfHanoi::checkWin()
 
 void TowersOfHanoi::play()
 {
+    int numOfMoves = 0;
     int winStatus = 0;
     int towerA, towerB;
     while(winStatus == 0)
@@ -85,10 +86,12 @@ void TowersOfHanoi::play()
         std::cin >> towerB;
         std::cout << "\n";
         this->move(towerA, towerB);
+        numOfMoves = numOfMoves + 1;
         winStatus = this->checkWin();
         std::cout << "\n";
     }
 
-    std::cout <<"Congrats, you won!"<< "\n";
+    string stringNumOfMoves = to_string(numOfMoves);
+    std::cout <<"Congrats, you won in "<< stringNumOfMoves << " moves!"<< "\n";
     this->displayTowers();
 }
