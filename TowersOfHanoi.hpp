@@ -18,5 +18,8 @@ class TowersOfHanoi
         void move(int towerA, int towerB);
         void populateArray();
         Stack* returnTower(int tower);
+        int checkWin();
+        void play();
+        
         
 };

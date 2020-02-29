@@ -55,14 +55,107 @@ void Stack::display()
 
 string Stack::displayAtIndex(int index)
 {
-    int indx = index;
-    int count = -1;
-    Node* currNode = this->top;
-    while(currNode)
+    int indexOfGrid = index;
+    int itemsInStack = this->findCount();
+    if(itemsInStack == -1)
     {
+        string space = "     ";
+        return space;
+    }
+    if(itemsInStack == 0)
+    {
+        if(indexOfGrid == 2)
+        {
+            string disc = this->findAtIndex(0)->makeStringDisk();
+            return disc;
+        }
+        else
+        {
+            string space = "     ";
+            return space;
+        }
         
-    }   
+    }
+    if(itemsInStack == 1)
+    {
+        if(indexOfGrid == 1)
+        {
+            string disc = this->findAtIndex(0)->makeStringDisk();
+            return disc;
+        }
+        else if(indexOfGrid == 2)
+        {
+            string disc = this->findAtIndex(1)->makeStringDisk();
+            return disc;
+        }
+        else
+        {
+            string space = "     ";
+            return space;
+        }
+        
+    }
+    if(itemsInStack == 2)
+    {
+        if(indexOfGrid == 0)
+        {
+            string disc = this->findAtIndex(0)->makeStringDisk();
+            return disc;
+        }
+        else if(indexOfGrid == 1)
+        {
+            string disc = this->findAtIndex(1)->makeStringDisk();
+            return disc;
+        }
+        else
+        {
+            string disc = this->findAtIndex(2)->makeStringDisk();
+            return disc;
+        }
+    }
 }
 
+int Stack::findCount()
+{
+    int count = -1;
+    if(this->top->getPayload() < 5)
+    {
+        Node* currNode = this->top;
+        while(currNode)
+        {
+            if(currNode->getPayload() < 5)
+            {
+                count = count + 1;
+                currNode = currNode->getNextNode();
+            }
+            else
+            {
+                return count;
+            }
+        }
+        return count;
+    }
+    else
+    {
+        return count;
+    }
+}
+
+Node* Stack::findAtIndex(int index)
+{
+    Node* currNode = this->top;
+    if(index == 0)
+    {
+        return currNode;
+    }
+    else
+    {
+        for(int i = 0; i < index; i++)
+        {
+            currNode = currNode->getNextNode();
+        }
+        return currNode;
+    }
+}
 
 

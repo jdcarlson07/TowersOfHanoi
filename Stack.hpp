@@ -14,6 +14,8 @@ class Stack
         int peek();
         void display();
         string displayAtIndex(int index);
+        int findCount();
+        Node* findAtIndex(int index);
         
         
 };

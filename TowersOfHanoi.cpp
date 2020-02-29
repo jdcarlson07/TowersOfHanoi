@@ -19,6 +19,7 @@ void TowersOfHanoi::displayTowers()
     std::cout << zero << "\n";
     std::cout << one << "\n";
     std::cout << two << "\n";
+    std::cout << "\n";
 }
 
 void TowersOfHanoi::move(int towerA, int towerB)
@@ -49,4 +50,38 @@ Stack* TowersOfHanoi::returnTower(int tower)
     int indexOfTower = tower - 1;
     Stack* towerToReturn = arrayOfTowers[indexOfTower];
     return towerToReturn;
+}
+
+int TowersOfHanoi::checkWin()
+{
+    Stack* right = this->arrayOfTowers[2];
+    if(right->findCount() == 2)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+
+}
+
+void TowersOfHanoi::play()
+{
+    int winStatus = 0;
+    int towerA, towerB;
+    while(winStatus == 0)
+    {
+        this->displayTowers();
+        std::cout <<"Enter a tower to move from"<< "\n";
+        std::cin >> towerA;
+        std::cout <<"Enter a tower to move to"<< "\n";
+        std::cin >> towerB;
+        this->move(towerA, towerB);
+        winStatus = this->checkWin();
+        std::cout << "\n";
+    }
+
+    std::cout <<"Congrats, you won!"<< "\n";
+    this->displayTowers();
 }

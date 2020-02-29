@@ -7,6 +7,7 @@ using namespace std;
 int main()
 {
     //creating our discs
+    Node* zero = new Node(5);
     Node* oneDisc = new Node(1);
     Node* twoDisc = new Node(2);
     Node* threeDisc = new Node(3);
@@ -22,6 +23,7 @@ int main()
 
     //left tower
     Stack* left = new Stack();
+    left->push(zero);
     left->push(threeDisc);
     left->push(twoDisc);
     left->push(oneDisc);
@@ -43,11 +45,7 @@ int main()
 
     TowersOfHanoi* game = new TowersOfHanoi(left, middle, right);
     game->populateArray();
-    game->displayTowers();
-    std::cout << "\n";
-    game->arrayOfTowers[1]->display();
+    game->play();
 
-    
-    
     return 0;
 }
