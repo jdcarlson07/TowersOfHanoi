@@ -26,15 +26,20 @@ void TowersOfHanoi::move(int towerA, int towerB)
 {   
     Stack* firstTower = returnTower(towerA);
     Stack* secondTower = returnTower(towerB);
-    
-    if(firstTower->peek() <= secondTower->peek())
+    int firstTowerInt = firstTower->peek();
+
+    if(firstTower->peek() <= secondTower->peek() and firstTowerInt < 5)
     {
         Node* discToMove = firstTower->pop();
         secondTower->push(discToMove);
     }
+    else if(firstTowerInt == 5)
+    {
+        std::cout << "Can't move from an emtpy tower!\n";
+    }
     else
     {
-        std::cout << "Can't Move Here!\n";
+        std::cout << "Can't move here!\n";
     }
 }
 
@@ -75,8 +80,10 @@ void TowersOfHanoi::play()
         this->displayTowers();
         std::cout <<"Enter a tower to move from"<< "\n";
         std::cin >> towerA;
+        std::cout << "\n";
         std::cout <<"Enter a tower to move to"<< "\n";
         std::cin >> towerB;
+        std::cout << "\n";
         this->move(towerA, towerB);
         winStatus = this->checkWin();
         std::cout << "\n";
